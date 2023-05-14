@@ -49,7 +49,8 @@ class BaseModel():
 
     def to_dict(self):
         """
-            returns a dictionary containing all keys/values of __dict__ of the instance
+            returns a dictionary containing all keys/values
+            of __dict__ of the instance
         """
         dct = dict(self.__dict__)
         dct["created_at"] = dct["created_at"].isoformat()

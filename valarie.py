@@ -1,16 +1,9 @@
-def print_letters():
-    """Print the letters 'x' and 'y'."""
-    letter_x = "x"
-    letter_y = "y"
-
-    print(letter_x)
-    print(letter_y)
+#!/usr/bin/python3
+"""Print the numbers x and y."""
 
 
-def main():
-    """Main function."""
-    print_letters()
+def print_numbers(x, y):
+    print("{:d} and {:d}".format(x, y))
 
 
-if __name__ == "__main__":
-    main()
+print_numbers(20, 23)

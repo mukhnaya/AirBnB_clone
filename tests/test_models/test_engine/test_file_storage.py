@@ -14,6 +14,7 @@ from models.city import City
 from models.amenity import Amenity
 from models.review import Review
 
+
 class TestFileStorage_instantiation(unittest.TestCase):
     '''unit tests'''
     def test_storage_initializes(self):

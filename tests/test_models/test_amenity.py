@@ -13,5 +13,6 @@ class TestAmenity_instantiation(unittest.TestCase):
     def test_updated_at_is_public_datetime(self):
         self.assertEqual(datetime, type(Amenity().updated_at))
 
+
 if __name__ == "__main__":
     unittest.main()

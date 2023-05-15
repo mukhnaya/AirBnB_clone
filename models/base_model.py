@@ -7,7 +7,7 @@ from datetime import datetime
 import models
 
 
-class BaseModel():
+class BaseModel:
     """
         Base model class
     """

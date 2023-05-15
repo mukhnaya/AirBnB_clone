@@ -13,7 +13,6 @@ from models.place import Place
 from models.review import Review
 
 
-'''class FileStorage'''
 class FileStorage:
     '''body of FileStorage Class'''
     __file_path = "file.json"
@@ -32,18 +31,20 @@ class FileStorage:
     def save(self):
         '''serializes __objects to the JSON file (path: __file_path)'''
         with open(FileStorage.__file_path, 'w', encoding='utf-8') as pau:
-            update_dic = {key: obj.to_dict() for key, obj in FileStorage.__objects.items()}
-        json.dump(updated_dic, pau)
+            update_dic = {key: obj.to_dict() for key, obj in
+                          FileStorage.__objects.items()}
+            json.dump(update_dic, pau)
 
     def reload(self):
-        '''deserializes the JSON file 
-        to __objects (only if 
-        the JSON file (__file_path) exists ; 
-        otherwise, do nothing. 
-        If the file doesn’t exist, 
+        '''deserializes the JSON file
+        to __objects (only if
+        the JSON file (__file_path) exists;
+        otherwise, do nothing.
+        If the file doesn’t exist,
         no exception should be raised)'''
         if (os.path.isfile(FileStorage.__file_path)):
             with open(FileStorage.__file_path, 'r', encoding="utf-8") as pau:
                 to_object = json.load(pau)
                 for keys, values in to_object.items():
-                    FileStorage.__objects[keys] = eval(values['__class__'])(**values)
+                    FileStorage.__objects[keys] = eval(
+                            values['__class__'])(**values)

@@ -23,12 +23,12 @@ class HBNBCommand(cmd.Cmd):
 
     def do_quit(self, arg):
         """ exit console """
-        exit()
+        return True
 
     def do_EOF(self, arg):
         """ method of EOF """
-        print('')
-        exit()
+        print()
+        return True
 
     def emptyline(self):
         """ no line entered """

@@ -5,13 +5,13 @@ import models
 import unittest
 from datetime import datetime
 from time import sleep
-from models.user import User
+from models.review import Review
 
 
-class TestUser_instantiation(unittest.TestCase):
-    '''tests'''
+class TestReview_instantiation(unittest.TestCase):
+    '''unit tests'''
     def test_id_is_public_str(self):
-        self.assertEqual(str, type(User().id))
+        self.assertEqual(str, type(Review().id))
 
 
 if __name__ == "__main__":

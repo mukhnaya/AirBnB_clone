@@ -4,7 +4,7 @@ import os
 from datetime import datetime
 import uuid
 import json
-from .models.base_model import BaseModel
+from models.base_model import BaseModel
 from models.user import User
 from models.state import State
 from models.city import City

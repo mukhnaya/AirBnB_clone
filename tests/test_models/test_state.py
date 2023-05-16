@@ -8,11 +8,19 @@ from time import sleep
 from models.state import State
 
 
-class TestState_instantiation(unittest.TestCase):
+class TestState(unittest.TestCase):
     '''unit tests'''
-    def test_created_at_is_public_datetime(self):
-        self.assertEqual(datetime, type(State().created_at))
+    
+    def test_should_create_state_instance(self):
+        """
+            TestState
+        """
+        state = State()
+        self.assertIsInstance(state, State)
 
-
-if __name__ == "__main__":
-    unittest.main()
+    def test_should_create_state_variable(self):
+        """
+            TestVariable
+        """
+        state = State()
+        self.assertIsInstance(state.name, str)

@@ -8,11 +8,19 @@ from time import sleep
 from models.amenity import Amenity
 
 
-class TestAmenity_instantiation(unittest.TestCase):
+class TestAmenity(unittest.TestCase):
     '''tests'''
-    def test_updated_at_is_public_datetime(self):
-        self.assertEqual(datetime, type(Amenity().updated_at))
 
+    def test_should_create_amenity_instance(self):
+        """
+            Test amenity
+        """
+        amenity = Amenity()
+        self.assertIsInstance(amenity, Amenity)
 
-if __name__ == "__main__":
-    unittest.main()
+    def test_shoudl_create_instance_variables(self):
+        """
+            Test variables
+        """
+        amenity = Amenity()
+        self.assertIsInstance(amenity.name, str)

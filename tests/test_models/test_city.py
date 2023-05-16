@@ -8,11 +8,20 @@ from time import sleep
 from models.city import City
 
 
-class TestCity_instantiation(unittest.TestCase):
+class TestCity(unittest.TestCase):
     '''unit tests'''
-    def test_created_at_is_public_datetime(self):
-        self.assertEqual(datetime, type(City().created_at))
+    
+    def test_should_create_intance_of_city(self):
+        """
+            Test instance creation
+        """
+        city = City()
+        self.assertIsInstance(city, City)
 
-
-if __name__ == "__main__":
-    unittest.main()
+    def test_should_create_instance_variable(self):
+        """
+            Test variable
+        """
+        city = City()
+        self.assertIsInstance(city.state_id, str)
+        self.assertIsInstance(city.name, str)

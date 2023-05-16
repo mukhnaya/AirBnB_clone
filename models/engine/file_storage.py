@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 '''importing modules '''
 import os
+from os import path
 from datetime import datetime
 import uuid
 import json
@@ -18,6 +19,14 @@ class FileStorage:
     __file_path = "file.json"
     __objects = {}
 
+    classes = {"BaseModel": BaseModel,
+               "User": User,
+               "State": State,
+               "City": City,
+               "Amenity": Amenity,
+               "Place": Place,
+               "Review": Review}
+
     def all(self):
         '''returns the dictionary __objects'''
         return FileStorage.__objects
@@ -30,6 +39,7 @@ class FileStorage:
 
     def save(self):
         '''serializes __objects to the JSON file (path: __file_path)'''
+        
         with open(FileStorage.__file_path, 'w', encoding='utf-8') as pau:
             update_dic = {key: obj.to_dict() for key, obj in
                           FileStorage.__objects.items()}

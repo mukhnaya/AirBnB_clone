@@ -52,9 +52,12 @@ class FileStorage:
         otherwise, do nothing.
         If the file doesn’t exist,
         no exception should be raised)'''
-        if (os.path.isfile(FileStorage.__file_path)):
-            with open(FileStorage.__file_path, 'r', encoding="utf-8") as pau:
-                to_object = json.load(pau)
-                for keys, values in to_object.items():
-                    FileStorage.__objects[keys] = eval(
-                            values['__class__'])(**values)
+        if path.isfile(FileStorage.__file_path):
+            with open(FileStorage.__file_path, "r") as f:
+                obj = json.load(f)
+                dct = {}
+                for k, v in obj.items():
+                    dct[k] = self.classes[v["__class__"]](**v)
+                FileStorage.__objects = dct
+        else:
+            return

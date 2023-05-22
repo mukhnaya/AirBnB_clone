@@ -1,2 +1,2 @@
-# Web Static
-This is implemented with HTML and CSS
+#Web Static
+This is now bieng implemented in HTML and CSS

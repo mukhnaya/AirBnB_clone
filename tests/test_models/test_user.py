@@ -8,11 +8,22 @@ from time import sleep
 from models.user import User
 
 
-class TestUser_instantiation(unittest.TestCase):
+class TestUser(unittest.TestCase):
     '''tests'''
-    def test_id_is_public_str(self):
-        self.assertEqual(str, type(User().id))
 
+    def test_should_create_user_instance(self):
+        """
+        Test
+        """
+        user = User()
+        self.assertIsInstance(user, User)
 
-if __name__ == "__main__":
-    unittest.main()
+    def test_should_creat_user_variables(self):
+        """
+        Test
+        """
+        user = User()
+        self.assertIsInstance(user.email, str)
+        self.assertIsInstance(user.password, str)
+        self.assertIsInstance(user.first_name, str)
+        self.assertIsInstance(user.last_name, str)

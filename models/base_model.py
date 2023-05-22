@@ -7,7 +7,7 @@ from datetime import datetime
 import models
 
 
-class BaseModel:
+class BaseModel():
     """
         Base model class
     """
@@ -18,6 +18,7 @@ class BaseModel:
             id (int): public instance attribute
 
         """
+        from models import storage
         time_format = '%Y-%m-%dT%H:%M:%S.%f'
         self.id = str(uuid.uuid4())
         self.created_at = datetime.now()
@@ -29,7 +30,7 @@ class BaseModel:
                 if key != "__class__":
                     setattr(self, key, value)
         else:
-            __init__.storage.new(self)
+            storage.new(self)
 
     def __str__(self):
         """
@@ -42,8 +43,9 @@ class BaseModel:
         """
             updates updated_at variable
         """
+        from models import storage
         self.updated_at = datetime.now()
-        __init__.storage.save()
+        storage.save()
 
     def to_dict(self):
         """

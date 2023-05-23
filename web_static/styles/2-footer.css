@@ -1,0 +1,14 @@
+/*
+ * footer
+ */
+
+footer {
+	background-color :#00FF00; 
+	height:60px;
+	bottom: 0;
+	position: absolute;
+	width: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

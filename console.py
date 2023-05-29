@@ -132,7 +132,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_update(self, arg):
         """ update JSON file"""
-         _all = storage.all()
+        _all = storage.all()
         if len(args.split()) == 0:
             print("** class name missing **")
 

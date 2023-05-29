@@ -37,7 +37,7 @@ class HBNBCommand(cmd.Cmd):
 
     def default(self, line):
          """default method"""
-         lst = (line.replace('(', '.').replace(',', '.').replace(' ', '')
+        lst = (line.replace('(', '.').replace(',', '.').replace(' ', '')
                [:-1].split('.'))
         if len(lst) > 1:
             if lst[1] == "all":

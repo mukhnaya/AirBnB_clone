@@ -36,8 +36,8 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def default(self, line):
-         """default method"""
-         lst = (line.replace('(', '.').replace(',', '.').replace(' ', '')
+        """default method """
+        lst = (line.replace('(', '.').replace(',', '.').replace(' ', '')
                [:-1].split('.'))
         if len(lst) > 1:
             if lst[1] == "all":
@@ -59,6 +59,7 @@ class HBNBCommand(cmd.Cmd):
         else:
             print("*** Unknown syntax: {}".format(line))
             return False
+
 
     def do_create(self, arg):
         """ create new instance """

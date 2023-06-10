@@ -1,10 +1,14 @@
-#!/usr/bin/python3
-""" import modules """
+#!/usr/bin/python
+""" class Review"""
 from models.base_model import BaseModel
 
 
 class Review(BaseModel):
-    """ Review inherit from BaseModel """
+    """Representation of Review """
     place_id = ""
     user_id = ""
     text = ""
+
+    def __init__(self, *args, **kwargs):
+        """initializes Review"""
+        super().__init__(*args, **kwargs)
